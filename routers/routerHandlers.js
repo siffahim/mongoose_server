@@ -7,7 +7,7 @@ const User = new mongoose.model("User", usersSchema)
 
 router.get('/', async (req, res) => {
     try {
-        const data = User.find({})
+        const data = await User.find({})
         res.status(200).json({
             result: data,
             message: "Success"
